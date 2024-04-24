@@ -15,19 +15,25 @@ module.exports = {
   plugins: ['react-refresh'],
   settings: {
     react: {
-      version: 'detect'
+      version: 'detect',
     },
     'import/resolver': {
       node: {
         paths: ['app'],
-        extensions: ['.js', '.jsx', '.ts', '.tsx']
-      }
-    }
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
+    },
   },
   rules: {
-    'react-refresh/only-export-components': [
-      'warn',
-      { allowConstantExport: true },
-    ],
+    'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
   },
-}
+  ignorePatterns: [
+    'node_modules/*',
+    'dist/*',
+    '.prettierrc.js',
+    '.eslintrc.js',
+    'env.d.ts',
+    'tsconfig.json',
+    'tsconfig.node.json',
+  ],
+};
